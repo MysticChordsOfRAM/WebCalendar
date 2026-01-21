@@ -1,0 +1,18 @@
+:80 {
+	handle / {
+		root * /srv
+		try_files /index.html
+		file_server
+	}
+
+	handle /{$CAL_ID}.ics {
+		root * /srv/files
+		file_server
+		header Content-Type text/calendar
+		header Cache-Control "public, max-age=3600"
+	}
+
+	handle {
+		respond "Access Denied" 403
+	}
+}
