@@ -1,0 +1,284 @@
+BEGIN:VCALENDAR
+VERSION:2.0
+PRODID:ics.py - http://git.io/lLljaA
+BEGIN:VEVENT
+DTSTART:20261209T140000Z
+SUMMARY:Social Services Estimating Conference: Kidcare Expenditures
+UID:3cc1eb8b-769b-4d15-9b7b-e3fa7c5535fe@3cc1.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261219T174500Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:8adfff08-851c-482f-aca3-40a6113c802d@8adf.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261217T150000Z
+SUMMARY:Self-Insurance Estimating Conference: State Employees' Health Insurance Enrollment
+UID:75f099d9-538d-48d9-937b-2722b23baed4@75f0.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260213T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:2f032fb1-51b6-40f4-8d77-fc2ffde2ae1d@2f03.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261203T183000Z
+SUMMARY:Demographic Estimating Conference: Florida Demographic Forecast
+UID:5774abfe-85d0-48fa-95d5-cc71e94cb72c@5774.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261215T134500Z
+SUMMARY:Revenue Estimating Conference: Outlook for State School Trust Fund
+UID:c4b4e7a0-2e5c-43d9-a3fe-c41e3748172e@c4b4.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261215T183000Z
+SUMMARY:Education Estimating Conference: Student Financial Aid
+UID:da3570bb-8ace-4090-82b8-980235cc608a@da35.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260114T140000Z
+SUMMARY:Revenue Estimating Conference: Fiscally Constrained Counties
+UID:466401ff-51d6-442a-9a0c-5e34f5a18de1@4664.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260123T140000Z
+SUMMARY:Revenue Estimating Conference: General Revenue Forecast\, Outlook for General Revenue
+UID:7c40d7ce-5c46-4430-b52e-c54f2b568c3f@7c40.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261204T180000Z
+SUMMARY:Social Services Estimating Conference: Medicaid Caseloads
+UID:3a2a3229-9be1-4f57-a98e-042484e0dbee@3a2a.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261223T140000Z
+SUMMARY:Criminal Justice Estimating Conference: Criminal Justice
+UID:22f55a05-2508-4213-a8b4-682e357822f2@22f5.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261120T140000Z
+SUMMARY:Social Services Estimating Conference: Kidcare Caseloads
+UID:6ece1c91-cc6d-4c2a-9eef-ecd24cf70704@6ece.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260112T140000Z
+SUMMARY:Revenue Estimating Conference: Transportation Revenues
+UID:74c383da-d36c-44d2-aaf9-2e542f54a0d9@74c3.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261114T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:cf86c476-1d50-416d-a295-ea3be9879cd3@cf86.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261205T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:273129e9-9063-4388-b939-6989ca42f35c@2731.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260105T183000Z
+SUMMARY:Education Estimating Conference: PreK-12 Enrollment
+UID:f522bf73-360d-421e-af33-4fe8411011cb@f522.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261208T140000Z
+SUMMARY:Labor Market Estimating Conference: Labor Market CANCELED
+UID:0c04c418-51a2-4d27-8c83-fda568d628bf@0c04.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261217T140000Z
+SUMMARY:Self-Insurance Estimating Conference: Risk Management
+UID:f2f19c68-12be-45e7-8eae-7a8cc6c8d081@f2f1.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261219T183000Z
+SUMMARY:Economic Estimating Conference: Florida Economic
+UID:93155517-cf5f-40a4-a155-3fe48bc39d61@9315.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260115T140000Z
+SUMMARY:Revenue Estimating Conference: Lottery
+UID:a2868c59-21d1-4ddf-a09f-2977b0278c65@a286.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261024T143000Z
+SUMMARY:Revenue Estimating Conference: Supplemental Information to the Ad Valorem Forecast
+UID:8b015f2a-6d4e-4c96-bad4-9467b8460bc2@8b01.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260109T183000Z
+SUMMARY:Revenue Estimating Conference: Slots\, Indian Gaming\, Pari-Mutuels
+UID:2de6c95a-832e-4ec8-aeb0-667a7efb6771@2de6.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260130T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:f353c160-d367-467b-b8c9-165f4b5014ee@f353.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261212T203000Z
+SUMMARY:Economic Estimating Conference: National Economic
+UID:da159f6c-1e9d-4fa8-8784-7a915110f5cc@da15.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260107T180000Z
+SUMMARY:Revenue Estimating Conference: Tobacco Settlement Forecast
+UID:cfcd4d09-e32f-4469-99bb-222e6321b622@cfcd.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260109T181500Z
+SUMMARY:Revenue Estimating Conference: Tobacco Settlement Trust Fund Financial Outlook Statement
+UID:82d9f770-925b-4774-b0d1-11c575b0f382@82d9.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261219T180000Z
+SUMMARY:Economic Estimating Conference: Interest Rates Used for Appropriations
+UID:5b62122f-7228-45d4-ac05-9ff98a60ad43@5b62.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260115T160000Z
+SUMMARY:Revenue Estimating Conference: Gross Receipts and Communication Services Tax (CST)
+UID:c94dd8c4-315e-4db9-8952-46b62d4ac901@c94d.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261222T133000Z
+SUMMARY:Social Services Estimating Conference: FMAP
+UID:3229652c-9da2-4183-ad84-96b775592e04@3229.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261007T133000Z
+SUMMARY:Revenue Estimating Conference: Long-Term Revenue Analysis
+UID:6f0a67ed-1227-4ca0-ad8e-2af7a1186443@6f0a.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260220T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:8cf9bc1f-59e1-4437-8f98-35a843458734@8cf9.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260306T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:feab79c6-40ad-4f53-8bb1-b82367051427@feab.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261218T144500Z
+SUMMARY:Early Learning Programs Estimating Conference: Voluntary PreK
+UID:22d67b58-ba20-49a3-a193-b1b969d32aa4@22d6.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260107T183000Z
+SUMMARY:Revenue Estimating Conference: Tobacco Tax & Surcharge
+UID:27165509-91e0-4482-8a65-924e0a7f1905@2716.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261107T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:bafe4cfe-3384-4952-bf1d-35a709262612@bafe.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261218T143000Z
+SUMMARY:Early Learning Programs Estimating Conference: School Readiness
+UID:720d03c8-5b59-4530-8ea0-b532d3e76064@720d.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260108T153000Z
+SUMMARY:Revenue Estimating Conference: Ad Valorem
+UID:26b2e8f9-e5ea-44be-80e5-3996a5df4ddb@26b2.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261222T140000Z
+SUMMARY:Social Services Estimating Conference: Medicaid Expenditures and Long Term Expenditures (Managed Care)
+UID:5485cb8d-e0d9-4724-afca-5ff799705a14@5485.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261031T133000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:a18e207d-4749-4245-99dc-163189ad42db@a18e.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261117T140000Z
+SUMMARY:Social Services Estimating Conference: TANF Caseloads and Expenditures
+UID:38dfa2ef-7737-4f44-b731-7093a45b0cce@38df.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260116T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:51ac4bd3-6d39-400f-ab56-5383d005d40d@51ac.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260227T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:68ebeee7-a41f-46c2-b8be-fe2bcec1d4bf@68eb.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261211T140000Z
+SUMMARY:Revenue Estimating Conference: Unclaimed Property
+UID:f84d9d7d-32b5-48b6-a6ff-2f260dc79138@f84d.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261215T140000Z
+SUMMARY:Revenue Estimating Conference: Article V Revenues
+UID:788cdd2a-0629-4f8e-ae69-def911aee57c@788c.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261021T133000Z
+SUMMARY:Florida Retirement System Actuarial Assumption Conference: Florida Retirement System
+UID:efe1091a-8e5e-4173-b76c-af947ba2262c@efe1.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261212T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:53376a58-0b7c-4af1-8da5-dc0d1af54bad@5337.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260106T183000Z
+SUMMARY:Revenue Estimating Conference: Highway Safety Revenues
+UID:e6ee805a-fad3-414d-b297-4f993cc5869f@e6ee.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260206T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:45be0eec-d9cc-4a61-9cf5-f796c0a6f341@45be.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261216T183000Z
+SUMMARY:Education Estimating Conference: Florida College System Enrollment
+UID:f10917ec-f857-4247-baff-8e1161492027@f109.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260109T140000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:b017a86e-be01-4c76-ba28-23ed175e7d4f@b017.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260121T143000Z
+SUMMARY:Revenue Estimating Conference: PECO
+UID:4e4d1bf7-a2bb-43c2-b203-db31a2f7bd40@4e4d.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261024T140000Z
+SUMMARY:Revenue Estimating Conference: Retrospects and Outlooks for General Revenue\, Educational Enhancement Trust Fund\, State School Trust Fund\, State Opioid Settlement Trust Fund and Tobacco Settlement Trust Fund
+UID:7e883eef-cc22-421b-a5dc-8227bf342ce8@7e88.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260108T140000Z
+SUMMARY:Self-Insurance Estimating Conference: State Employees' Health Insurance Expenditures
+UID:79901ba0-f36e-40f4-a39d-7ff6c1aff062@7990.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260106T180000Z
+SUMMARY:Revenue Estimating Conference: Unemployment Compensation Trust Fund Forecast
+UID:04b46d50-0387-4f3a-9ea9-c1e7c7bfb0e8@04b4.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20260122T214500Z
+SUMMARY:Revenue Estimating Conference: Outlooks for State Opioid Settlement and Educational Enhancement Trust Funds
+UID:a442b442-3339-48e0-a8b9-0fb48637b42e@a442.org
+END:VEVENT
+BEGIN:VEVENT
+DTSTART:20261121T153000Z
+SUMMARY:Revenue Estimating Conference: Impact Conference
+UID:f6a25e51-f03f-4fa2-bf46-b0004822d06e@f6a2.org
+END:VEVENT
+END:VCALENDAR

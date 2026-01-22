@@ -1,17 +1,30 @@
 import requests
-import pdfplumber
 import json
 import time
+import httpx
+import pytz
 import os
+from typing import List
 from ics import Calendar, Event
 from datetime import datetime
-import pytz
+from google import genai
+from google.genai import types
+from random import randint
+from pydantic import BaseModel, Field
 
 PDF_URL = "https://edr.state.fl.us/Content/calendar.pdf"
 CAL_ID = os.getenv("CAL_ID", "default")
 OUTPUT_FILE = f"/output/{CAL_ID}.ics"
-OLLAMA_API = "http://ollama:11434/api"
-MODEL = "llama3.2"
+API_KEY = os.getenv('GEMINI_KEY')
+MODEL_NAME = 'gemini-3-flash-preview'
+
+class CalendarEvent(BaseModel):
+    title: str = Field(description="The name of the meeting or event")
+    date: str = Field(description="The date in format DD-Month (e.g. 12-January)")
+    time: str = Field(description="The start time in format HH:MM AM/PM (e.g. 1:30 PM)")
+
+class CalendarResponse(BaseModel):
+    events: List[CalendarEvent]
 
 def log(msg):
 	print(f"{[datetime.now().strftime('%H:%M:%S')]} {msg}", flush = True)
@@ -20,54 +33,60 @@ def pull_calendar():
 	log('starting job')
 	
 	try:
-		response = requests.get(PDF_URL, timeout = 15)
-		with open("temp_pdf", 'wb') as f:
-			f.write(response.content)
+		doc_data = httpx.get(PDF_URL).content
+		log(f"Calendar is {len(doc_data)} bytes today")
 	except Exception as e:
 		log(f"Download Failed: {e}")
 		return None
 		
-	text_content = ""
-	with pdfplumber.open("temp_pdf") as pdf:
-		for page in pdf.pages:
-			text_content = page.extract_text() + '\n'
+	client = genai.Client(api_key = API_KEY)
 			
 	prompt = """
-	Extract events from this text into a JSON object with key 'events'
-	(list of {{title, date, time}})
-	Date Format: DD-Month.
-	Time Format: HH:MM AM/PM
-	
-	**TEXT**: {text_content[:3000]}
-	"""
-	
-	payload = {
-		"model": MODEL,
-		"prompt": prompt,
-		"format": "json",
-		"stream": False,
-		"keep_alive": 0
-		}
+    This PDF contains a schedule of meetings for the Florida Economic Estimating Conference.
+    The user wants to parse this schedule into a list of events. Please take each event on
+    this schedule and exctract the event title, event date, and event start time. Return
+    a JSON list of events matching the provided schema.
+    
+    If a year is not explicitly mentioned, assume the current year (2026).
+    
+    Ignore page headers/footers.
+    """
 		
-	log("Ollama Working...")
+	log("Gemini Working...")
 	try:
-		resp = requests.post("f{OLLAMA_API}/generate",
-							 json = payload,
-							 timeout = 300)
-							 
-		result = resp.json()
-		event_list = json.loads(result['response']).get('events', [])
+		response = client.models.generate_content(
+            model = MODEL_NAME,
+            contents = [
+				types.Part.from_bytes(
+					data = doc_data,
+					mime_type = 'application/pdf'
+				), 
+				prompt
+			],
+            config = {"response_mime_type": "application/json",
+                      "response_json_schema": CalendarResponse.model_json_schema()}
+			)
+        
+		log("Received Response")
+		time.sleep(10)
+		clean_text = response.text.replace("```json", "").replace("```", "").strip()
+		data = json.loads(clean_text)		 
+		event_list = data.get('events', [])
+		log(f"Gemini Found {len(event_list)} events!")
 	except Exception as e:
-		log(f"Ollama Failure: {e}")
+		log(f"Gemini Failure: {e}")
+		time.sleep(10)
+		log(f"Raw Response: {response.text}")
 		return None
 	
 	cal = Calendar()
 	year = datetime.now().year
 	
-	for item in events_list:
+	for item in event_list:
+		log(f"Creating Event {item['title']}...")
 		try:
 			dt_str = f"{item['date']} {year} {item['time']}"
-			dt = dattime.strptime(dt_str, "%d-%B %Y %I:%M %p")
+			dt = datetime.strptime(dt_str, "%d-%B %Y %I:%M %p")
 			e = Event()
 			e.name = item['title']
 			e.begin = dt.replace(tzinfo = pytz.timezone('US/Eastern'))
@@ -79,7 +98,12 @@ def pull_calendar():
 		f.writelines(cal.serialize())
 	log("Calendar Updated")
 	
+	try:
+		client.files.delete(name = sample_file.name)
+	except:
+		pass
+	
 if __name__ == "__main__":
-	time.sleep(18)
+	time.sleep(randint(7, 19))
 	pull_calendar()
 	

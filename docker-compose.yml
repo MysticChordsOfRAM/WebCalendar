@@ -1,24 +1,14 @@
 services:
-  ollama:
-    image: ollama/ollama:latest
-    container_name: webc_ollama
-    restart: unless-stopped
-    volumes:
-      - ollama_storage:/root/.ollama
-    networks:
-      - internal_net
-
   scraper:
     build: .
     container_name: webc_scraper
     restart: unless-stopped
-    depends_on:
-      - ollama
     environment:
       - TZ=${TIMEZONE}
       - CAL_ID=${CALENDAR_ID}
+      - GEMINI_KEY=${GEMINI_KEY}
     volumes:
-      - shared_data:/output
+      - ./data:/output
     networks:
       - internal_net
 
@@ -33,13 +23,9 @@ services:
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
       - ./index.html:/srv/index.html
-      - shared_data:/srv/files
+      - ./data:/srv/files
     networks:
       - internal_net
-
-volumes:
-  ollama_storage:
-  shared_data:
 
 networks:
   internal_net:
