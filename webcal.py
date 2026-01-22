@@ -1,4 +1,3 @@
-import requests
 import json
 import time
 import httpx
@@ -6,7 +5,7 @@ import pytz
 import os
 from typing import List
 from ics import Calendar, Event
-from datetime import datetime
+from datetime import datetime, timedelta
 from google import genai
 from google.genai import types
 from random import randint
@@ -68,7 +67,6 @@ def pull_calendar():
 			)
         
 		log("Received Response")
-		time.sleep(10)
 		clean_text = response.text.replace("```json", "").replace("```", "").strip()
 		data = json.loads(clean_text)		 
 		event_list = data.get('events', [])
@@ -78,32 +76,68 @@ def pull_calendar():
 		time.sleep(10)
 		log(f"Raw Response: {response.text}")
 		return None
-	
-	cal = Calendar()
-	year = datetime.now().year
+		
+	parsed_events = []
+	current_year = datetime.now().year
+	timezone = pytz.timezone('US/Eastern')
 	
 	for item in event_list:
-		log(f"Creating Event {item['title']}...")
-		try:
-			dt_str = f"{item['date']} {year} {item['time']}"
-			dt = datetime.strptime(dt_str, "%d-%B %Y %I:%M %p")
-			e = Event()
-			e.name = item['title']
-			e.begin = dt.replace(tzinfo = pytz.timezone('US/Eastern'))
-			cal.events.add(e)
-		except:
-			continue
+		DATE = item['date']
+		TIME = item['time']
+		TITLE = item['title']
 		
+		try:
+			dt_str = f"{DATE} {current_year} {TIME}"
+			dt = datetime.strptime(dt_str, "%d-%B %Y %I:%M %p")
+			dt = dt.replace(tzinfo = timezone)
+			
+			parsed_events.append({"title": TITLE,
+								  "start": dt})
+		except Exception as e:
+			log(f"Bad Data Found {e}")
+			
+	parsed_events.sort(key = lambda x: x['start'])
+			
+	cal = Calendar()
+	
+	for dex in range(len(parsed_events)):
+		log(f"Creating Event {dex}...")
+		
+		citem = parsed_events[dex]
+		start_time = citem["start"]
+		
+		limit_5h = start_time + timedelta(hours = 5)
+		candidates = [limit_5h]
+		
+		limit_7pm = start_time.replace(hour = 19, minute = 0, second = 0)
+		if limit_7pm > start_time:
+			candidates.append(limit_7pm)
+			
+		if dex + 1 < len(parsed_events):
+			next_event = parsed_events[dex + 1]
+			next_start = next_event['start']
+			
+			if next_start.date() == start_time.date():
+				if next_start > start_time:
+					candidates.append(next_start)
+					
+		end_time = min(candidates)
+		
+		duration = end_time - start_time
+		
+		if duration < timedelta(minutes = 15):
+			duration = timedelta(minutes = 15)
+			
+		e = Event()
+		e.name = citem['title']
+		e.begin = start_time
+		e.end = start_time + duration
+		cal.events.add(e)
+
 	with open(OUTPUT_FILE, "w") as f:
 		f.writelines(cal.serialize())
 	log("Calendar Updated")
 	
-	try:
-		client.files.delete(name = sample_file.name)
-	except:
-		pass
-	
 if __name__ == "__main__":
 	time.sleep(randint(7, 19))
 	pull_calendar()
-	

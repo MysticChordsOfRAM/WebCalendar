@@ -26,6 +26,9 @@ services:
       - ./data:/srv/files
     networks:
       - internal_net
+      - web_gateway
 
 networks:
   internal_net:
+  web_gateway:
+    external: true

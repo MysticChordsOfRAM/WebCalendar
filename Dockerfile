@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir -r requirements.txt
 
 COPY webcal.py .
 
-RUN echo "0 14 * * * python /app/webcal.py > /proc/1/fd/1 2>&1" | crontab - && \
+RUN echo "0 19 * * * python /app/webcal.py > /proc/1/fd/1 2>&1" | crontab - && \
     touch /var/log/cron.log
 
 CMD cron && tail -f /var/log/cron.log
