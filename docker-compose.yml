@@ -1,17 +1,4 @@
 services:
-  scraper:
-    build: .
-    container_name: webc_scraper
-    restart: unless-stopped
-    environment:
-      - TZ=${TIMEZONE}
-      - CAL_ID=${CALENDAR_ID}
-      - GEMINI_KEY=${GEMINI_KEY}
-    volumes:
-      - ./data:/output
-    networks:
-      - internal_net
-
   web:
     image: caddy:alpine
     container_name: webc_caddy
@@ -22,13 +9,10 @@ services:
       - CAL_ID=${CALENDAR_ID}
     volumes:
       - ./Caddyfile:/etc/caddy/Caddyfile
-      - ./index.html:/srv/index.html
-      - ./data:/srv/files
+      - ./data:/srv/files:ro
     networks:
-      - internal_net
       - web_gateway
 
 networks:
-  internal_net:
   web_gateway:
     external: true

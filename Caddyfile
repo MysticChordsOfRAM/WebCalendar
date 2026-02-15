@@ -7,7 +7,7 @@
 
 	handle /{$CAL_ID}.ics {
 		root * /srv/files
-		file_server
+		file_server browse
 		header Content-Type text/calendar
 		header Cache-Control "public, max-age=3600"
 	}
